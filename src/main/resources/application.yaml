@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eureka-server
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/eureka-server
+    username: postgres
+    password: 12345
+    driverClassName: org.postgresql.Driver
+server:
+  port: 8761
+
+eureka:
+  instance:
+    appname: eureka-server
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+
+
+
+
